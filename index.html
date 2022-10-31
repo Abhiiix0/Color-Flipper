@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            height: 50px;
+            background-color: white;
+            box-shadow: 0px 0 10px black;
+
+        }
+
+        h2 {
+            color: rgb(0, 123, 255);
+            font-weight: 400;
+            /* font-size: 25px; */
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 500px;
+            /* background-color: aqua; */
+            margin: 0 15px;
+        }
+
+        span {
+            width: 120px;
+            /* background-color: yellow; */
+            justify-content: space-between;
+            display: flex;
+        }
+
+        a {
+            /* background-color: blue; */
+            color: black;
+            font-size: larger;
+            letter-spacing: 1px;
+        }
+
+        a:hover {
+            color: rgb(0, 123, 255);
+        }
+
+        .info {
+            margin: 200px 10px 0 10px;
+            display: flex;
+            background-color: black;
+            color: white;
+            font-size: 25px;
+            width: fit-content;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .info #color {
+            margin-left: 5px;
+        }
+
+        button {
+            background-color: transparent;
+            font-size: larger;
+            padding: 4px 8px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+            transition: 0.2s;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h2>Color Flipper</h2>
+            <span>
+                <a href="index.html">Simple</a>
+                <a href="hex.html">Hex</a>
+            </span>
+        </nav>
+    </header>
+
+    <div class="container" align="center">
+        <div class="info">
+            <p> Background Color :</p>
+            <p id="color">White</p>
+        </div>
+        <button id="bttn">Click me</button>
+    </div>
+    <script>
+
+        var btn = document.getElementById("bttn")
+        var color = document.getElementById("color")
+        var body = document.querySelector("body")
+
+        const simple = ["Red", "Blue", "Yellow", "Green", "Orange", "Pink"]
+
+        btn.addEventListener("click", ()=>{
+            const randcolor = randomno()
+            color.innerHTML= simple[randcolor]
+            body.style.backgroundColor=simple[randcolor]
+            console.log(randcolor)
+        })
+
+        function randomno() {
+            return Math.floor(Math.random()*simple.length)
+        }
+
+
+    </script>
+</body>
+
+</html>
